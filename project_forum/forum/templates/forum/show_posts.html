@@ -1,0 +1,15 @@
+<h1>{{title}}</h1>
+<u1>
+    {% for post in posts %}
+    <p>{{post.author}}, date: {{post.date}}</p>
+    {{post.text}}
+    {% endfor %}
+    <p>Add post</p>
+    <form action={{add_post_link}} method="post">
+        {% csrf_token %}
+        <table>
+        {{ form.as_table }}
+        </table>
+        <input type="submit" value="Submit" />
+    </form>
+</u1>
